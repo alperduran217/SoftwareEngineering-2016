@@ -6,7 +6,6 @@
 //  Copyright © 2016 Alper Duran. All rights reserved.
 //
 
-var vector:[String] = []
 
 
 import UIKit
@@ -49,7 +48,8 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
         degreeField.text = value
         
     }
-
+    
+   
 
     
     @IBOutlet weak var viewForce: UILabel!

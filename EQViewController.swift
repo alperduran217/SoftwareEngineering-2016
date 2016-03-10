@@ -14,6 +14,10 @@ class EQViewController: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // This scrolView delegates to itself
+        
+         scrollView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,9 +25,14 @@ class EQViewController: UIViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // Main.storyboard Section
+    
     @IBOutlet weak var pageControl: UIPageControl!
     
     @IBOutlet weak var scrollView: UIScrollView!
+    
+    
+    // Coding Section
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView){
         
@@ -33,7 +42,5 @@ class EQViewController: UIViewController, UIScrollViewDelegate {
         
         self.pageControl.currentPage = Int(currentPage)
     }
-    
-
 
 }
