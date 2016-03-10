@@ -32,12 +32,17 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
     var sinY:Double = 0.0
     var roundedresult = 0.0
     var roundedresult2 = 0.0
-    func radiansToDegrees (radians: Double)->Double {
-        return radians * M_PI / 180
-    }
+    
+    
+    
+    
+    @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var resultLbl: UILabel!
+    @IBOutlet weak var lineChartView: LineChartView!
+    @IBOutlet weak var barChartView: BarChartView!
     @IBOutlet weak var degreeField: UITextField!
     @IBOutlet weak var sliderValue: UISlider!
-        @IBAction func sliderMoved(sender: AnyObject) {
+    @IBAction func sliderMoved(sender: AnyObject) {
         
         let value = String(Int(sliderValue.value))
         
@@ -69,9 +74,6 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
        
         
         
-        setChart(degreeArray, values: degreeArray)
-        setChart2(fakeGraphX, values: fakeGraphY)
-        
         barChartView.delegate = self
         lineChartView.delegate = self
       
@@ -91,7 +93,7 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
     }
     
     
-    // Pagin yapan fonksiyon
+    // Function that makes the slider works
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView){
         let pageWidth: CGFloat = CGRectGetWidth(scrollView.frame)
@@ -102,9 +104,12 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
 
     
     
-    // SAYFA 1
+    // PAGE 1
     
     @IBOutlet weak var forceField: UITextField!
+    
+    
+    
     @IBAction func addForce(sender: AnyObject) {
         guard let theText = forceField.text where !forceField.text!.isEmpty else {
             viewForce.text = "Must enter values to the empty spaces"
@@ -169,36 +174,47 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
 
     }
     
-    // SAYFA 2
+    // PAGE 2
     
     
-    //set up the chart
+    // Function that creates bar chart on second page.
     
     func setChart(dataPoints: [Double], values: [Double]) {
         barChartView.noDataText = "You need to provide data for the chart."
+        
         barChartView.descriptionText = ""
         
         var dataEntries: [BarChartDataEntry] = []
         
         for i in 0..<dataPoints.count {
             let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
+            
             dataEntries.append(dataEntry)
         }
         
         let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Forces vs Angles")
+        
         let chartData = BarChartData(xVals: degreeArray, dataSet: chartDataSet)
+        
         barChartView.data = chartData
+        
         barChartView.xAxis.labelPosition = .Bottom
+        
         chartDataSet.colors = ChartColorTemplates.colorful()
+        
         barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0)
         
     }
+    
+    // Function that selects the bar by touching on it
     
     func chartValueSelected(chartView: ChartViewBase, entry: ChartDataEntry, dataSetIndex: Int, highlight: ChartHighlight) {
         print("\(entry.value) in \(forceArray[entry.xIndex])")
         
         tappedInt = entry.xIndex
+        
         button.enabled = true
+        
         button.setTitleColor(UIColor.blueColor(), forState: UIControlState())
     }
     
@@ -207,17 +223,15 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
     @IBAction func buttonClicked(sender: AnyObject) {
         
         forceField.text = String(forceArray[tappedInt])
+        
         degreeField.text = String(degreeArray[tappedInt])
 
     }
     
-   // SAYFA 3
+   // PAGE 3
     
-    @IBOutlet weak var button: UIButton!
+    // The button "Finde Result" : This button finds the final R vector and draw the line of it.
     
-    @IBOutlet weak var resultLbl: UILabel!
-    @IBOutlet weak var lineChartView: LineChartView!
-    @IBOutlet weak var barChartView: BarChartView!
     @IBAction func findResult(sender: AnyObject) {
         
         if forceArray.count == degreeArray.count {
@@ -225,105 +239,95 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
                 
                 
                 cosX = cos(radiansToDegrees(degreeArray[i]))
+                
                 rXarr += [forceArray[i]*cosX]
+                
                 sinY = sin(radiansToDegrees(degreeArray[i]))
+                
                 rYarr += [forceArray[i]*sinY]
                 
                 
             }
             
             for var j=0; j<rXarr.count; j++ {
-                setChart2(rXarr, values: rYarr)
+                
+                setChart2(rXarr, values: rYarr
+                )
 
                 rX += rXarr[j]
+                
                 rY += rYarr[j]
             }
             
             lineGrarphX.append(rXarr[0])
+            
             lineGrarphY.append(rYarr[0])
-            setChart3(lineGrarphX, values: lineGrarphY)
+         
             lineGrarphX.append(rX)
+            
             lineGrarphY.append(rY)
-            setChart3(lineGrarphX, values: lineGrarphY)
-
-
-            
-
-
-            
-
-            
-            
+    
             var result = 0.0
+            
             var result2 = 0.0
+            
             result=sqrt(rX*rX+rY*rY)
+            
             var x = 0.0
             
             x=rY/rX
             
             result2 = atan(x) * (180 / M_PI)
             
-            
-            
-            
             roundedresult = Double(String(format:"%.3f", result))!
+            
             roundedresult2 = Double(String(format:"%.3f", result2))!
-            
-            
-            
-            
-            
+        
             resultLbl.text = "R Vector = \(roundedresult) N, \(roundedresult2) °"
             
         }
         else {
+            
             resultLbl.text = "Force and magnitude values must be equal"
+            
         }
         
         
 
     }
     
+    
+    // Function that creates the line Chart on the third Page
     
     func setChart2(dataPoints: [Double], values: [Double]) {
+       
         barChartView.descriptionText = ""
 
         var dataEntries: [ChartDataEntry] = []
         
         for i in 0..<dataPoints.count {
+            
             let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            
             dataEntries.append(dataEntry)
         }
         
-        
-        
         let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Final Vector")
+        
         let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
+        
         lineChartView.data = lineChartData
         
     }
     
     
     
-    func setChart3(dataPoints: [Double], values: [Double]) {
-        barChartView.descriptionText = ""
-        
-        var dataEntries: [ChartDataEntry] = []
-        
-        for i in 0..<dataPoints.count {
-            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
-            dataEntries.append(dataEntry)
-        }
-        
-        
-        
-        let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Final Vector")
-        let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
-        lineChartView.data = lineChartData
-        
-        lineChartDataSet.colors = ChartColorTemplates.colorful()
 
-        
+    
+    // Function that converts the radians to pi
+    
+    func radiansToDegrees (radians: Double)->Double {
+        return radians * M_PI / 180
     }
     
 
