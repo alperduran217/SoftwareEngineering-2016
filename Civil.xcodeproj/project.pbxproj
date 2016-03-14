@@ -102,6 +102,7 @@
 		643308A11C8B10F10082BF5F /* CivilUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivilUITests.swift; sourceTree = "<group>"; };
 		643308A31C8B10F10082BF5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64849D301C8E4E4800AF977C /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		64E838B11C9372D1004F4FD5 /* AC Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AC Keyboard.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FFBEB21C91EF52004CA2F6 /* EQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EQViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +123,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6433089A1C8B10F10082BF5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64E838AE1C9372D1004F4FD5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -150,6 +158,7 @@
 				6433087E1C8B10F10082BF5F /* Civil.app */,
 				643308921C8B10F10082BF5F /* CivilTests.xctest */,
 				6433089D1C8B10F10082BF5F /* CivilUITests.xctest */,
+				64E838B11C9372D1004F4FD5 /* AC Keyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -254,6 +263,23 @@
 			productReference = 6433089D1C8B10F10082BF5F /* CivilUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		64E838B01C9372D1004F4FD5 /* AC Keyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64E838BE1C9372D1004F4FD5 /* Build configuration list for PBXNativeTarget "AC Keyboard" */;
+			buildPhases = (
+				64E838AD1C9372D1004F4FD5 /* Sources */,
+				64E838AE1C9372D1004F4FD5 /* Frameworks */,
+				64E838AF1C9372D1004F4FD5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AC Keyboard";
+			productName = "AC Keyboard";
+			productReference = 64E838B11C9372D1004F4FD5 /* AC Keyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -277,6 +303,10 @@
 						CreatedOnToolsVersion = 7.2.1;
 						DevelopmentTeam = 37QP5GQ5Y3;
 						TestTargetID = 6433087D1C8B10F10082BF5F;
+					};
+					64E838B01C9372D1004F4FD5 = {
+						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 37QP5GQ5Y3;
 					};
 				};
 			};
@@ -302,6 +332,7 @@
 				6433087D1C8B10F10082BF5F /* Civil */,
 				643308911C8B10F10082BF5F /* CivilTests */,
 				6433089C1C8B10F10082BF5F /* CivilUITests */,
+				64E838B01C9372D1004F4FD5 /* AC Keyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -362,6 +393,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		64E838AF1C9372D1004F4FD5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -389,6 +427,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				643308A21C8B10F10082BF5F /* CivilUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64E838AD1C9372D1004F4FD5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +632,28 @@
 			};
 			name = Release;
 		};
+		64E838B91C9372D1004F4FD5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "AC Keyboard/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlperDuran.Civil.AC-Keyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		64E838BA1C9372D1004F4FD5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "AC Keyboard/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AlperDuran.Civil.AC-Keyboard";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -622,6 +689,15 @@
 			buildConfigurations = (
 				643308AD1C8B10F10082BF5F /* Debug */,
 				643308AE1C8B10F10082BF5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64E838BE1C9372D1004F4FD5 /* Build configuration list for PBXNativeTarget "AC Keyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64E838B91C9372D1004F4FD5 /* Debug */,
+				64E838BA1C9372D1004F4FD5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

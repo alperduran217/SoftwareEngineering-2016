@@ -330,5 +330,16 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
         return radians * M_PI / 180
     }
     
+    
+    
+    // Circular button
+    
+    
+    
+    
+    
+    
+    
+    
 
 }
