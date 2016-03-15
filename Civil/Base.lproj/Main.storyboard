@@ -316,7 +316,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aZs-KJ-yjB" id="Qmh-zp-NGo">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="68.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZV-Lv-2ig">
@@ -337,7 +337,7 @@
                                         <rect key="frame" x="0.0" y="69" width="600" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KIL-bo-JBN" id="IPA-YL-LKt">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Vectors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vl1-cN-8WT">
@@ -364,7 +364,7 @@
                                         <rect key="frame" x="0.0" y="125" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="y8y-0f-RSX" id="ZWb-vT-JDn">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equilibrium of Concurrent Force System" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCS-VU-Fh9">
@@ -391,7 +391,7 @@
                                         <rect key="frame" x="0.0" y="169" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dk3-TS-6K7" id="S60-CP-7jk">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Moments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgN-73-3rL">
@@ -1002,15 +1002,6 @@
                                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="40"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="0 j 0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1H1-a1-S5j">
-                                                        <rect key="frame" x="252" y="176" width="97" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="A1n-AE-Yiz"/>
-                                                            <constraint firstAttribute="width" constant="97" id="gSv-h5-TcB"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="40"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                                    </textField>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="j" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Py-5Y-dMT">
                                                         <rect key="frame" x="253" y="121" width="94" height="39"/>
                                                         <constraints>
@@ -1069,8 +1060,18 @@
                                                         <state key="normal" title="+"/>
                                                         <connections>
                                                             <action selector="addForce:" destination="V7z-Qd-qlN" eventType="touchUpInside" id="Am6-BB-Ddu"/>
+                                                            <action selector="addition:" destination="Abu-iX-Be4" eventType="touchUpInside" id="m47-c9-Llc"/>
                                                         </connections>
                                                     </button>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="0 j 0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1H1-a1-S5j">
+                                                        <rect key="frame" x="252" y="176" width="97" height="50"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="A1n-AE-Yiz"/>
+                                                            <constraint firstAttribute="width" constant="97" id="gSv-h5-TcB"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="40"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -1172,8 +1173,14 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1800" height="600"/>
                     <connections>
+                        <outlet property="iField" destination="K5D-l2-HGd" id="eHK-kS-sbw"/>
+                        <outlet property="jField" destination="1H1-a1-S5j" id="hPq-oE-XVI"/>
+                        <outlet property="kField" destination="0Lx-80-Qq6" id="gGL-Bg-6cP"/>
                         <outlet property="pageControl" destination="8Lk-a8-t3h" id="qUz-ot-X1d"/>
                         <outlet property="scrollView" destination="2B1-ct-nMV" id="Hcx-kF-UX5"/>
+                        <outlet property="xField" destination="jgO-p1-YFV" id="Zw3-hz-bQB"/>
+                        <outlet property="yField" destination="pl3-lI-rYe" id="4eD-aG-5S7"/>
+                        <outlet property="zField" destination="aHi-P4-bJr" id="IMg-D1-gmM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XX9-xm-sEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
