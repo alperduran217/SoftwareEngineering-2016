@@ -29,10 +29,19 @@ class MomentViewController: UIViewController, UIScrollViewDelegate {
     
     // Variables
     
-     var bigArray:[[Double]] =  [[Double]]()
+    var bigArray:[[String]] =  [[String]](count:50, repeatedValue:[String](count:6, repeatedValue:""))
+    
+    var biggestArray:[Double] = []
     
     var row = 0
     var column = 0
+    var sum = 0.0
+    var mI = 0.0
+    var mJ = 0.0
+    var mK = 0.0
+    var sumI = 0.0
+    var sumJ = 0.0
+    var sumK = 0.0
     
     // Main.storyboard Section
 
@@ -52,6 +61,9 @@ class MomentViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var iLabel: UILabel!
+    @IBOutlet weak var jLabel: UILabel!
+    @IBOutlet weak var kLabel: UILabel!
     // Coding Section
     @IBAction func addition(sender: AnyObject) {
         
@@ -60,24 +72,26 @@ class MomentViewController: UIViewController, UIScrollViewDelegate {
             column = 0
         }
         
-        bigArray[row].append(Double(iField.text!)!)
+        
+        bigArray[row][column] = (iField.text)!
         column = column + 1
         
-        bigArray[row].append(Double(jField.text!)!)
+        bigArray[row][column] = (jField.text)!
         column = column + 1
         
-        bigArray[row].append(Double(kField.text!)!)
+        bigArray[row][column] = (kField.text)!
         column = column + 1
         
-        bigArray[row].append(Double(xField.text!)!)
+        bigArray[row][column] = (xField.text)!
         column = column + 1
         
-        bigArray[row].append(Double(yField.text!)!)
+        bigArray[row][column] = (yField.text)!
         column = column + 1
         
-        bigArray[row].append(Double(zField.text!)!)
+        bigArray[row][column] = (zField.text)!
         column = column + 1
         row = row + 1
+        column = 0
         
         print(bigArray)
         
@@ -90,6 +104,32 @@ class MomentViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
+    @IBAction func findResult(sender: AnyObject) {
+        
+      
+        
+        for var i = 0; i < 1000 ; i++ {
+            
+            if bigArray[i][0] == "" {
+                break
+            }
+            mI = Double(bigArray[i][1])!*Double(bigArray[i][5])! - Double(bigArray[i][2])!*Double(bigArray[i][4])!
+            mJ = Double(bigArray[i][2])!*Double(bigArray[i][3])! - Double(bigArray[i][0])!*Double(bigArray[i][5])!
+            mK = Double(bigArray[i][0])!*Double(bigArray[i][4])! - Double(bigArray[i][1])!*Double(bigArray[i][3])!
+            
+            sumI += mI
+            sumJ = sumJ + mJ
+            sumK += mK
+            
+            
+        }
+        
+        iLabel.text = String(sumI)
+        jLabel.text = String(sumJ)
+        kLabel.text = String(sumK)
+
+
+    }
 
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView){
