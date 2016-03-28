@@ -16,7 +16,7 @@ class MomentViewController: UIViewController, UIScrollViewDelegate {
         scrollView.delegate = self
         
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MomentViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
 
     }
@@ -106,10 +106,8 @@ class MomentViewController: UIViewController, UIScrollViewDelegate {
     
     @IBAction func findResult(sender: AnyObject) {
         
-      
         
-        for var i = 0; i < 1000 ; i++ {
-            
+        for i in 0...1000 {
             if bigArray[i][0] == "" {
                 break
             }
@@ -120,8 +118,6 @@ class MomentViewController: UIViewController, UIScrollViewDelegate {
             sumI += mI
             sumJ = sumJ + mJ
             sumK += mK
-            
-            
         }
         
         iLabel.text = String(sumI)

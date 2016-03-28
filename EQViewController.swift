@@ -51,8 +51,17 @@ class EQViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var zLbl: UILabel!
     
+    @IBOutlet weak var secondView: UIView!
+    
+    @IBOutlet weak var thirdView: UIView!
+    
+    @IBOutlet weak var buttonOne: UIButton!
+    
+    @IBOutlet weak var firstView: UIView!
     
     // Variables
+    
+    var index = 0
     
     var roundedresult = 0.0
     var roundedresult2 = 0.0
@@ -255,7 +264,7 @@ class EQViewController: UIViewController, UIScrollViewDelegate {
         
         dC[2] = dC[2] - height
         
-        for var i = 0 ; i<=2 ; i++ {
+        for i in 0...2 {
             
             temp1[i] = dA[i] - dW[i]
             temp2[i] = dB[i] - dW[i]
@@ -266,8 +275,7 @@ class EQViewController: UIViewController, UIScrollViewDelegate {
             divide3 += (dC[i] - dW[i])*(dC[i] - dW[i])
         }
         
-        for var i = 0 ; i<=2 ; i++ {
-            
+        for i in 0...2 {
             tempor1 = temp1[i] / sqrt(divide1)
             tempor2 = temp2[i] / sqrt(divide2)
             tempor3 = temp3[i] / sqrt(divide3)
@@ -277,10 +285,9 @@ class EQViewController: UIViewController, UIScrollViewDelegate {
             fB.append(tempor2)
             fC.append(tempor3)
         }
-        
-        for var j = 0 ; j<=2 ; j++ {
-            
-            for var k = 0 ; k<=2 ; k++ {
+
+        for j in 0...2 {
+            for k in 0...2 {
                 if k==0 {
                     arrayX[j][k] = fA[j]
                 }
@@ -293,10 +300,10 @@ class EQViewController: UIViewController, UIScrollViewDelegate {
                     arrayX[j][k] = fC[j]
                     
                 }
-                
+
             }
-            
         }
+        
         
         x = arrayX[0][0]*arrayX[1][1]*arrayX[2][2]
         y = arrayX[0][1]*arrayX[1][2]*arrayX[2][0]
@@ -423,6 +430,10 @@ class EQViewController: UIViewController, UIScrollViewDelegate {
         yLbl.text = "Fy = \(roundedresult2)"
         zLbl.text = "Fz = \(800-roundedresult3)"
         
-
+        
+        
+        
+        
+        
     }
 }

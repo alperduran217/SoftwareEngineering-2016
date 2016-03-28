@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vbc-X4-1qd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vbc-X4-1qd">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -299,7 +299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gcV-gg-L57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="771" y="-850"/>
+            <point key="canvasLocation" x="771" y="250"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="Hth-Ux-Zo1">
@@ -428,7 +428,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3et-tX-bZS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="951" y="172"/>
+            <point key="canvasLocation" x="171" y="-528"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="d4H-87-vMK">
@@ -465,7 +465,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YfO-Ko-FGU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-523" y="-850"/>
+            <point key="canvasLocation" x="-485" y="238"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xYu-la-Gkh">
@@ -491,7 +491,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ytl-ZR-G5O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="171" y="172"/>
+            <point key="canvasLocation" x="-485" y="-528"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ghV-eu-TBF">
@@ -826,10 +826,14 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1800" height="600"/>
                     <connections>
+                        <outlet property="buttonOne" destination="SiG-MM-YsJ" id="asB-ZV-lp7"/>
+                        <outlet property="firstView" destination="IZT-JK-5BH" id="h41-dW-g0M"/>
                         <outlet property="forceField" destination="U2w-Ev-Ygj" id="uUd-ld-hqy"/>
                         <outlet property="hField" destination="oUl-TQ-828" id="gi8-aI-OHv"/>
                         <outlet property="pageControl" destination="ls9-RU-A3R" id="Fne-Bj-gSr"/>
                         <outlet property="scrollView" destination="sgI-MQ-bhs" id="nJd-im-g8z"/>
+                        <outlet property="secondView" destination="U1e-pv-faK" id="C9r-pU-00d"/>
+                        <outlet property="thirdView" destination="EjD-C9-ICU" id="4HW-7d-VVn"/>
                         <outlet property="xField" destination="ZQ0-sS-m5H" id="rDw-uw-JBi"/>
                         <outlet property="xLbl" destination="Sl0-dT-s7B" id="K90-9G-mxM"/>
                         <outlet property="yField" destination="7Bd-EX-tuM" id="rbT-5y-rgG"/>
@@ -1271,9 +1275,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9il-L0-PUb"/>
         <segue reference="1Y8-1b-IRy"/>
         <segue reference="xTf-fo-Wot"/>
-        <segue reference="BlT-Ki-fQn"/>
+        <segue reference="JNq-jq-4sy"/>
+        <segue reference="9il-L0-PUb"/>
     </inferredMetricsTieBreakers>
 </document>

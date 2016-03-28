@@ -64,7 +64,7 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
         
         scrollView.delegate = self
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(VectorViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
        
         degreeField.text = String(180)
@@ -161,7 +161,7 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
         
         setChart(degreeArray, values: forceArray)
 
-        for var i=0 ; i<forceArray.count; i++ {
+        for i in 0...forceArray.count {
             
             var roundresult = 0.0
             roundresult = Double(String(format:"%.3f", forceArray[i]))!
@@ -235,7 +235,7 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
     @IBAction func findResult(sender: AnyObject) {
         
         if forceArray.count == degreeArray.count {
-            for var i=0; i<forceArray.count; i++ {
+            for i in 0...forceArray.count {
                 
                 
                 cosX = cos(radiansToDegrees(degreeArray[i]))
@@ -249,7 +249,7 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
                 
             }
             
-            for var j=0; j<rXarr.count; j++ {
+            for j in 0...rXarr.count {
                 
                 setChart2(rXarr, values: rYarr
                 )
