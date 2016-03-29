@@ -18,6 +18,8 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
     var tappedInt:Int = 0
     var fakeGraphX:[Double] = [0.0]
     var fakeGraphY:[Double] = [0.0]
+    
+    
     var lineGrarphX:[Double] = []
     var lineGrarphY:[Double] = []
     var rXarr:[Double] = []

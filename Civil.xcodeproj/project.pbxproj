@@ -17,6 +17,10 @@
 		643308A21C8B10F10082BF5F /* CivilUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643308A11C8B10F10082BF5F /* CivilUITests.swift */; };
 		64849D3F1C8E4E5B00AF977C /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64849D381C8E4E4800AF977C /* Charts.framework */; };
 		64849D401C8E4E5B00AF977C /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 64849D381C8E4E4800AF977C /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		64DD8D271CA96DC7007EB64B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DD8D261CA96DC7007EB64B /* TableViewController.swift */; };
+		64DD8D2C1CA9E192007EB64B /* PinPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DD8D2B1CA9E192007EB64B /* PinPointViewController.swift */; };
+		64DD8D2F1CA9E389007EB64B /* Uhrzeigersinn.png in Resources */ = {isa = PBXBuildFile; fileRef = 64DD8D2E1CA9E389007EB64B /* Uhrzeigersinn.png */; };
+		64DD8D311CA9E395007EB64B /* Gegenuhrzeigersinn.png in Resources */ = {isa = PBXBuildFile; fileRef = 64DD8D301CA9E395007EB64B /* Gegenuhrzeigersinn.png */; };
 		64DED9AE1C976FF800F72BA4 /* MomentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DED9AD1C976FF800F72BA4 /* MomentViewController.swift */; };
 		64FFBEB31C91EF52004CA2F6 /* EQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FFBEB21C91EF52004CA2F6 /* EQViewController.swift */; };
 /* End PBXBuildFile section */
@@ -103,6 +107,10 @@
 		643308A11C8B10F10082BF5F /* CivilUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CivilUITests.swift; sourceTree = "<group>"; };
 		643308A31C8B10F10082BF5F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64849D301C8E4E4800AF977C /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		64DD8D261CA96DC7007EB64B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		64DD8D2B1CA9E192007EB64B /* PinPointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinPointViewController.swift; sourceTree = "<group>"; };
+		64DD8D2E1CA9E389007EB64B /* Uhrzeigersinn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Uhrzeigersinn.png; sourceTree = "<group>"; };
+		64DD8D301CA9E395007EB64B /* Gegenuhrzeigersinn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gegenuhrzeigersinn.png; sourceTree = "<group>"; };
 		64DED9AD1C976FF800F72BA4 /* MomentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MomentViewController.swift; sourceTree = "<group>"; };
 		64E838B11C9372D1004F4FD5 /* AC Keyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "AC Keyboard.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64FFBEB21C91EF52004CA2F6 /* EQViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EQViewController.swift; path = ../EQViewController.swift; sourceTree = "<group>"; };
@@ -166,15 +174,18 @@
 		643308801C8B10F10082BF5F /* Civil */ = {
 			isa = PBXGroup;
 			children = (
+				64DD8D2D1CA9E36C007EB64B /* Images */,
 				6416E0FC1C8DD7400096102C /* VectorViewController.swift */,
 				64FFBEB21C91EF52004CA2F6 /* EQViewController.swift */,
 				64DED9AD1C976FF800F72BA4 /* MomentViewController.swift */,
 				643308811C8B10F10082BF5F /* AppDelegate.swift */,
 				643308831C8B10F10082BF5F /* ViewController.swift */,
+				64DD8D261CA96DC7007EB64B /* TableViewController.swift */,
 				643308851C8B10F10082BF5F /* Main.storyboard */,
 				643308881C8B10F10082BF5F /* Assets.xcassets */,
 				6433088A1C8B10F10082BF5F /* LaunchScreen.storyboard */,
 				6433088D1C8B10F10082BF5F /* Info.plist */,
+				64DD8D2B1CA9E192007EB64B /* PinPointViewController.swift */,
 			);
 			path = Civil;
 			sourceTree = "<group>";
@@ -206,6 +217,15 @@
 				64849D3E1C8E4E4800AF977C /* ChartsTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		64DD8D2D1CA9E36C007EB64B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				64DD8D2E1CA9E389007EB64B /* Uhrzeigersinn.png */,
+				64DD8D301CA9E395007EB64B /* Gegenuhrzeigersinn.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,7 +397,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6433088C1C8B10F10082BF5F /* LaunchScreen.storyboard in Resources */,
+				64DD8D2F1CA9E389007EB64B /* Uhrzeigersinn.png in Resources */,
 				643308891C8B10F10082BF5F /* Assets.xcassets in Resources */,
+				64DD8D311CA9E395007EB64B /* Gegenuhrzeigersinn.png in Resources */,
 				643308871C8B10F10082BF5F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,10 +433,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				643308841C8B10F10082BF5F /* ViewController.swift in Sources */,
+				64DD8D271CA96DC7007EB64B /* TableViewController.swift in Sources */,
 				643308821C8B10F10082BF5F /* AppDelegate.swift in Sources */,
 				64DED9AE1C976FF800F72BA4 /* MomentViewController.swift in Sources */,
 				64FFBEB31C91EF52004CA2F6 /* EQViewController.swift in Sources */,
 				6416E0FD1C8DD7400096102C /* VectorViewController.swift in Sources */,
+				64DD8D2C1CA9E192007EB64B /* PinPointViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

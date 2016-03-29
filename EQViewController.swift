@@ -19,7 +19,7 @@ class EQViewController: UIViewController, UIScrollViewDelegate {
         
          scrollView.delegate = self
         
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(EQViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
 
     }
