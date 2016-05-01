@@ -64,7 +64,9 @@ class MomentViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var iLabel: UILabel!
     @IBOutlet weak var jLabel: UILabel!
     @IBOutlet weak var kLabel: UILabel!
+    
     // Coding Section
+    
     @IBAction func addition(sender: AnyObject) {
         
         if column == 6 {

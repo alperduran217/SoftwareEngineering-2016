@@ -137,41 +137,42 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
             degreeArray[tappedInt] = Double(degreeField.text!)!
             setChart(degreeArray, values: forceArray)
             
-           
-             let   roundresult = Double(String(format:"%.3f", forceArray[tappedInt]))!
-                
-                viewForce.text = "\(tappedInt+1). Vector = \(roundresult) N, \(degreeArray[tappedInt]) ° \n"
             
-
+            let   roundresult = Double(String(format:"%.3f", forceArray[tappedInt]))!
+            
+            viewForce.text = "\(tappedInt+1). Vector = \(roundresult) N, \(degreeArray[tappedInt]) ° \n"
+            
+            
             tappedInt = 0
         }
-        
-        else {
-        if forceField.text!.rangeOfString("√") != nil {
-            let sliced = String(forceField.text!.characters.dropFirst())
-            forceArray.append(sqrt(Double(sliced)!))
-            
-            forceField.text = nil }
             
         else {
-
-        
+            if forceField.text!.rangeOfString("√") != nil {
+                let sliced = String(forceField.text!.characters.dropFirst())
+                forceArray.append(sqrt(Double(sliced)!))
+                
+                forceField.text = nil }
+                
+            else {
+                
+                
                 forceArray.append(Double(forceField.text!)!)
-            forceField.text = ""
-    }
-        degreeArray.append(Double(degreeField.text!)!)
-        
-        setChart(degreeArray, values: forceArray)
-
-        for i in 0...forceArray.count {
+                forceField.text = ""
+            }
+            degreeArray.append(Double(degreeField.text!)!)
             
-            var roundresult = 0.0
-            roundresult = Double(String(format:"%.3f", forceArray[i]))!
+            setChart(degreeArray, values: forceArray)
             
-            viewForce.text = "\(i+1). Vector = \(roundresult) N, \(degreeArray[i]) ° \n"
+            for var i=0 ; i<forceArray.count; i++ {
+                
+                var roundresult = 0.0
+                roundresult = Double(String(format:"%.3f", forceArray[i]))!
+                
+                viewForce.text = "\(i+1). Vector = \(roundresult) N, \(degreeArray[i]) ° \n"
+            }
+            
         }
         
-        }
 
 
     }
@@ -236,8 +237,9 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
     
     @IBAction func findResult(sender: AnyObject) {
         
+        
         if forceArray.count == degreeArray.count {
-            for i in 0...forceArray.count {
+            for var i=0; i<forceArray.count; i++ {
                 
                 
                 cosX = cos(radiansToDegrees(degreeArray[i]))
@@ -251,11 +253,11 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
                 
             }
             
-            for j in 0...rXarr.count {
+            for var j=0; j<rXarr.count; j++ {
                 
                 setChart2(rXarr, values: rYarr
                 )
-
+                
                 rX += rXarr[j]
                 
                 rY += rYarr[j]
@@ -264,11 +266,11 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
             lineGrarphX.append(rXarr[0])
             
             lineGrarphY.append(rYarr[0])
-         
+            
             lineGrarphX.append(rX)
             
             lineGrarphY.append(rY)
-    
+            
             var result = 0.0
             
             var result2 = 0.0
@@ -284,7 +286,7 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
             roundedresult = Double(String(format:"%.3f", result))!
             
             roundedresult2 = Double(String(format:"%.3f", result2))!
-        
+            
             resultLbl.text = "R Vector = \(roundedresult) N, \(roundedresult2) °"
             
         }
@@ -293,7 +295,6 @@ class VectorViewController: UIViewController, UIScrollViewDelegate, ChartViewDel
             resultLbl.text = "Force and magnitude values must be equal"
             
         }
-        
         
 
     }
